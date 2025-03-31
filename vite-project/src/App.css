@@ -33,19 +33,15 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
 
 .read-the-docs {
   color: #888;
 }
 
 /* display:flex => helps tell all child components to match what the parent is like */
-.image {
+#image {
   display: flex;
-  height: 20vh;
-  width: 35vw;
+  width: 25vw;
 }
 
 #header {
@@ -59,5 +55,19 @@
   height: 5vh;
 }
 
+#Card {
+  border-width: 2px;
+  border-style: solid;
+}
 
+#more-icon {
+  height: 3vh;
+  width: 3vw;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 

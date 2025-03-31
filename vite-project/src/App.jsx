@@ -5,6 +5,7 @@ import './App.css'
 import messi from "./assets/messi-wins-worldcup.jpg"
 import soccerChess from "./assets/messi-ronaldo-chess.webp"
 import shadowBoy from "./assets/shadow-boy.png"
+import threeDots from "./assets/ellipsis-solid.svg"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,9 +13,8 @@ function App() {
   return (
     <>
     {/* props: variables that pass information from the parent to the child components*/}
-      <Header picture={shadowBoy} name={"Shadow Boy"}></Header>
-      <Image picture={messi} title={"Picture of messi"}></Image>
-      <Image picture={soccerChess} title={"Picture of soccerChess"}></Image>
+      <Card></Card>
+
     </>
   )
 }
@@ -25,10 +25,7 @@ function Image ({picture, title}) {
   //'return' statements require one parent
   return (
     // <img src={}></img>
-    <div className='image'>
-      <img src={picture}></img>
-      <h3>{title}</h3>
-    </div>
+    <img src={picture} id="image"></img>
   )
 }
 
@@ -36,8 +33,30 @@ function Header ({picture, name}) {
 
   return (
     <div id='header'>
-      <img src={picture} className='profile-picture'></img>
-      <p>{name}</p>
+      <div id="profile">
+        <img src={picture} className='profile-picture'></img>
+        <p>{name}</p>
+      </div>
+      <img src={threeDots} id="more-icon"></img>
+    </div>
+  )
+}
+
+function description ({liked_by_who}) {
+
+  return (
+    <p>{liked_by_who}</p>
+  )
+}
+
+
+function Card () {
+
+  return (
+    <div id="Card">
+      <Header picture={shadowBoy} name={"Shadow Boy"}></Header>
+      <Image picture={messi} title={"Picture of messi"}></Image>
+      <description></description>
     </div>
   )
 }
