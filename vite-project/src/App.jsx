@@ -6,6 +6,10 @@ import messi from "./assets/messi-wins-worldcup.jpg"
 import soccerChess from "./assets/messi-ronaldo-chess.webp"
 import shadowBoy from "./assets/shadow-boy.png"
 import threeDots from "./assets/ellipsis-solid.svg"
+import heart from "./assets/heart-solid.svg"
+import comment from "./assets/comment-solid.svg"
+import forward from "./assets/paper-plane-solid.svg"
+import bookmark from "./assets/bookmark-solid.svg"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,10 +46,19 @@ function Header ({picture, name}) {
   )
 }
 
-function description ({liked_by_who}) {
+function Description ({liked_by_who}) {
 
   return (
-    <p>{liked_by_who}</p>
+    <div>
+      <div id="description-icons-box">
+        <img src={heart} id="love-button" class="description-icons"></img>
+        <img src={comment} id="comment-button" class="description-icons"></img>
+        <img src={forward} id="forward-button" class="description-icons"></img>
+        <img src={bookmark} id="bookmark-button" class="description-icons"></img>
+      </div>
+      <p>{liked_by_who}</p>
+    </div>
+    
   )
 }
 
@@ -56,7 +69,7 @@ function Card () {
     <div id="Card">
       <Header picture={shadowBoy} name={"Shadow Boy"}></Header>
       <Image picture={messi} title={"Picture of messi"}></Image>
-      <description></description>
+      <Description liked_by_who={"Liked by random people"}></Description>
     </div>
   )
 }
