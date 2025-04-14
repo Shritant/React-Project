@@ -10,18 +10,28 @@ import heart from "./assets/heart-solid.svg"
 import comment from "./assets/comment-solid.svg"
 import forward from "./assets/paper-plane-solid.svg"
 import bookmark from "./assets/bookmark-solid.svg"
+import ronaldo from "./assets/ronaldo-wins-euros.jpg"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    {/* props: variables that pass information from the parent to the child components*/}
-      <Card></Card>
-
-    </>
+    <Feed></Feed>
   )
 }
+
+function Feed() {
+
+  return (
+    <div id="Feed">
+    {/* props: variables that pass information from the parent to the child components*/}
+      <Card profile_picture={shadowBoy} profile_picture_text={"Shadow Boy"} image={messi} image_title={"Picture of Messi"} liked_text={"Liked by random people"}></Card>
+      <Card profile_picture={shadowBoy} profile_picture_text={"Shadow Boy"} image={soccerChess} image_title={"Picture of Messi vs Ronaldo in Chess"} liked_text={"Liked by random people"}></Card>
+      <Card profile_picture={shadowBoy} profile_picture_text={"Shadow Boy"} image={ronaldo} image_title={"Picture of Ronaldo"} liked_text={"Liked by random people"}></Card>
+    </div>
+  )
+}
+
 
 //components need capitals
 function Image ({picture, title}) {
@@ -51,25 +61,25 @@ function Description ({liked_by_who}) {
   return (
     <div>
       <div id="description-icons-box">
-        <img src={heart} id="love-button" class="description-icons"></img>
-        <img src={comment} id="comment-button" class="description-icons"></img>
-        <img src={forward} id="forward-button" class="description-icons"></img>
-        <img src={bookmark} id="bookmark-button" class="description-icons"></img>
+        <img src={heart} id="love-button" className="description-icons"></img>
+        <img src={comment} id="comment-button" className="description-icons"></img>
+        <img src={forward} id="forward-button" className="description-icons"></img>
+        <img src={bookmark} id="bookmark-button" className="description-icons"></img>
       </div>
-      <p>{liked_by_who}</p>
+      <p className="description-text">{liked_by_who}</p>
     </div>
     
   )
 }
 
 
-function Card () {
+function Card ({profile_picture, profile_picture_text, image, image_title, liked_text}) {
 
   return (
     <div id="Card">
-      <Header picture={shadowBoy} name={"Shadow Boy"}></Header>
-      <Image picture={messi} title={"Picture of messi"}></Image>
-      <Description liked_by_who={"Liked by random people"}></Description>
+      <Header picture={profile_picture} name={profile_picture_text}></Header>
+      <Image picture={image} title={image_title}></Image>
+      <Description liked_by_who={liked_text}></Description>
     </div>
   )
 }

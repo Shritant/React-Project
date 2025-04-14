@@ -56,8 +56,10 @@
 }
 
 #Card {
-  border-width: 2px;
+  border-width: 0.5px;
   border-style: solid;
+  border-color: lightgray;
+  border-bottom: none;
 }
 
 #more-icon {
@@ -85,3 +87,18 @@
 #bookmark-button {
   margin-left: 67%;
 }
+
+.description-text {
+  display: flex;
+  align-items: left;
+  margin-left: 10px;
+}
+
+#Feed {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+
+
