@@ -100,5 +100,20 @@
   flex-direction: column;
 }
 
+#shorts-picture {
+  border-radius: 40px;
+  height: 5vh;
+  width: 5vh;
+}
 
+#shorts-section {
+  display: flex;
+  border-color: lightgray;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+#app {
+  width: 25vw;
+}
 

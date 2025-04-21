@@ -11,12 +11,54 @@ import comment from "./assets/comment-solid.svg"
 import forward from "./assets/paper-plane-solid.svg"
 import bookmark from "./assets/bookmark-solid.svg"
 import ronaldo from "./assets/ronaldo-wins-euros.jpg"
+import shadowGirl from "./assets/shadow-girl.jpg"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Feed></Feed>
+    <div id="app">
+      <Section></Section>
+      <Feed></Feed>
+    </div>
+  )
+}
+
+
+function Shorts({profile}) {
+
+  return (
+    <div>
+      <img src={profile} id="shorts-picture"></img>
+    </div>
+  )
+}
+
+function Section() {
+
+  return (
+    <div id="shorts-section">
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts profile={shadowGirl}></Shorts>
+    </div>
   )
 }
 
@@ -83,5 +125,12 @@ function Card ({profile_picture, profile_picture_text, image, image_title, liked
     </div>
   )
 }
+
+
+
+
+
+
+
 
 export default App
