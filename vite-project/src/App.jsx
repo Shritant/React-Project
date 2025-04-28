@@ -12,24 +12,42 @@ import forward from "./assets/paper-plane-solid.svg"
 import bookmark from "./assets/bookmark-solid.svg"
 import ronaldo from "./assets/ronaldo-wins-euros.jpg"
 import shadowGirl from "./assets/shadow-girl.jpg"
+import shadowChat from "./assets/shadowchat_title.png"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div id="app">
+      <Navigation></Navigation>
       <Section></Section>
       <Feed></Feed>
     </div>
   )
 }
 
-
-function Shorts({profile}) {
+function Navigation() {
 
   return (
-    <div>
-      <img src={profile} id="shorts-picture"></img>
+    <div id="Navigation">
+    <img src={shadowChat} id="shadowchat"></img>
+    <img src={shadowChat} id="shadowchat"></img>
+    <img src={shadowChat} id="shadowchat"></img>
+    <img src={forward}></img>
+
+    </div>
+  )
+
+  
+
+}
+
+function Shorts({profile}) {
+const [isClicked, setIsClicked] = useState(false)
+
+  return (
+    <div >
+      <img className={isClicked==true? "clicked":""} onClick={()=>{setIsClicked(true)}} src={profile} id="shorts-picture"></img>
     </div>
   )
 }

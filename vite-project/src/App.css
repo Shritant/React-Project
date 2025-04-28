@@ -111,9 +111,22 @@
   border-color: lightgray;
   gap: 10px;
   overflow-x: scroll;
-}
+} 
 
 #app {
   width: 25vw;
+}
+
+.clicked {
+  opacity: 0.7;
+}
+
+#Navigation {
+  display: flex;
+}
+
+#shadowchat {
+  height: 3vh;
+  width: 8vw;
 }
 
