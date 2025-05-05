@@ -13,15 +13,19 @@ import bookmark from "./assets/bookmark-solid.svg"
 import ronaldo from "./assets/ronaldo-wins-euros.jpg"
 import shadowGirl from "./assets/shadow-girl.jpg"
 import shadowChat from "./assets/shadowchat_title.png"
+import search from "./assets/search-solid.svg"
+import worldVideo from "./assets/world-video.mp4"
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <div id="app">
       <Navigation></Navigation>
       <Section></Section>
       <Feed></Feed>
+      {showModal==true?<Modal></Modal>:null}
     </div>
   )
 }
@@ -30,10 +34,12 @@ function Navigation() {
 
   return (
     <div id="Navigation">
-    <img src={shadowChat} id="shadowchat"></img>
-    <img src={shadowChat} id="shadowchat"></img>
-    <img src={shadowChat} id="shadowchat"></img>
-    <img src={forward}></img>
+      <img src={shadowChat} id="shadowchat"></img>
+      <div>
+        <img src={heart} className="navigation-icons"></img>
+        <img src={search} className="navigation-icons"></img> 
+        <img src={forward} className="navigation-icons"></img>
+      </div>
 
     </div>
   )
@@ -140,6 +146,18 @@ function Card ({profile_picture, profile_picture_text, image, image_title, liked
       <Header picture={profile_picture} name={profile_picture_text}></Header>
       <Image picture={image} title={image_title}></Image>
       <Description liked_by_who={liked_text}></Description>
+    </div>
+  )
+}
+
+
+function Modal () {
+
+  return (
+    <div id="modal-background">
+      <video id="Modal" controls autoPlay muted loop>
+        <source src={worldVideo} type="video/mp4"></source>
+      </video> 
     </div>
   )
 }

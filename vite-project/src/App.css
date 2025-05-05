@@ -111,6 +111,8 @@
   border-color: lightgray;
   gap: 10px;
   overflow-x: scroll;
+  overflow: hidden;
+
 } 
 
 #app {
@@ -130,3 +132,37 @@
   width: 8vw;
 }
 
+.navigation-icons {
+  height: 2vh;
+  width: 2vw;
+  margin-top: 10px;
+}
+
+#Navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-width: 2px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: lightgray;
+  padding: 18px;
+  align-items: center;
+}
+
+#modal-background {
+  background-color: black;
+  width: 100vw;
+  height: 200vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#Modal {
+  position: absolute;
+  width: 25vw;
+  height: 50vh;
+  top: 22vh;
+  left: 37.5vw;
+}
