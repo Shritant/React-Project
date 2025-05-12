@@ -13,7 +13,7 @@ import bookmark from "./assets/bookmark-solid.svg"
 import ronaldo from "./assets/ronaldo-wins-euros.jpg"
 import shadowGirl from "./assets/shadow-girl.jpg"
 import shadowChat from "./assets/shadowchat_title.png"
-import search from "./assets/search-solid.svg"
+import search from "./assets/search-solid.svg" 
 import worldVideo from "./assets/world-video.mp4"
 
 function App() {
@@ -23,9 +23,9 @@ function App() {
   return (
     <div id="app">
       <Navigation></Navigation>
-      <Section></Section>
+      <Section setShowModal={setShowModal}></Section> 
       <Feed></Feed>
-      {showModal==true?<Modal></Modal>:null}
+      {showModal==true?<Modal setShowModal={setShowModal}></Modal>:null}
     </div>
   )
 }
@@ -48,21 +48,28 @@ function Navigation() {
 
 }
 
-function Shorts({profile}) {
+function Shorts({profile,setShowModal}) {
 const [isClicked, setIsClicked] = useState(false)
+
+const handleClick = ()=>{
+  setIsClicked(true)
+  setShowModal(true)
+}
+
 
   return (
     <div >
-      <img className={isClicked==true? "clicked":""} onClick={()=>{setIsClicked(true)}} src={profile} id="shorts-picture"></img>
+      <img className={isClicked==true? "clicked":""} onClick={()=>{handleClick()}} src={profile} id="shorts-picture"></img>
     </div>
   )
 }
 
-function Section() {
+function Section({setShowModal}) {
+
 
   return (
     <div id="shorts-section">
-      <Shorts profile={shadowGirl}></Shorts>
+      <Shorts setShowModal={setShowModal} profile={shadowGirl}></Shorts>
       <Shorts profile={shadowGirl}></Shorts>
       <Shorts profile={shadowGirl}></Shorts>
       <Shorts profile={shadowGirl}></Shorts>
@@ -151,10 +158,11 @@ function Card ({profile_picture, profile_picture_text, image, image_title, liked
 }
 
 
-function Modal () {
+function Modal ({setShowModal}) {
 
   return (
-    <div id="modal-background">
+    <div>
+      <div onClick={()=>{setShowModal(false)}} id="modal-background"></div>
       <video id="Modal" controls autoPlay muted loop>
         <source src={worldVideo} type="video/mp4"></source>
       </video> 
